@@ -65,6 +65,10 @@ if [[ $(get_config SSHD) == "yes" ]] ; then
     dropbear -R
 fi
 
+if [[ $(get_config WSDD) == "yes" ]] ; then
+    dropbear -R
+fi
+
 if [[ $(get_config NTPD) == "yes" ]] ; then
     # Wait until all the other processes have been initialized
     sleep 5 && ntpd -p $(get_config NTP_SERVER) &

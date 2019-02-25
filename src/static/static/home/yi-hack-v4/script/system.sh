@@ -65,8 +65,8 @@ if [[ $(get_config SSHD) == "yes" ]] ; then
     dropbear -R
 fi
 
-if [[ $(get_config WSDD) == "yes" ]] ; then
-    dropbear -R
+if [[ $(get_config WSD) == "yes" ]] ; then
+    wsdiscovery wlan0 $(cat /home/app/.camver)
 fi
 
 if [[ $(get_config NTPD) == "yes" ]] ; then
